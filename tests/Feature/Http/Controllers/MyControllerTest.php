@@ -2,7 +2,7 @@
 
 use AndyParinas\LaravelPackageExample\Http\Controllers\MyController;
 
-it('has a route', function(){
+it('has a route', function () {
 
     // $this->get('my-route')
     //     ->assertOk()
@@ -11,6 +11,4 @@ it('has a route', function(){
     $this->get(action([MyController::class, 'index']))
         ->assertOk()
         ->assertSee('Hello from Package View');
-
-
 });

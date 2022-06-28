@@ -13,8 +13,6 @@ class MyModel extends Model
 
     public function getUppercaseNameAttribute(): string
     {
-
         return strtoupper($this->name);
     }
-
 }

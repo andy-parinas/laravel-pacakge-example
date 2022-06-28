@@ -2,15 +2,13 @@
 
 use AndyParinas\LaravelPackageExample\Models\MyModel;
 
-it('can create model', function(){
-
+it('can create model', function () {
     $myModel = MyModel::factory()->create();
 
     $this->assertModelExists($myModel);
-
 });
 
-it('can return uppercase name', function(){
+it('can return uppercase name', function () {
 
     /** @var MyModel $myModel */
     $myModel = MyModel::factory()->create(['name' => 'John']);
@@ -18,6 +16,4 @@ it('can return uppercase name', function(){
     $this->assertModelExists($myModel);
 
     expect($myModel->uppercaseName)->toEqual('JOHN');
-
-
 });

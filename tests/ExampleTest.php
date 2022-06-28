@@ -10,15 +10,12 @@ it('can test', function () {
     artisan(LaravelPackageExampleCommand::class)->assertExitCode(Command::SUCCESS);
 });
 
-it('can output configured value', function(){
-
+it('can output configured value', function () {
     artisan(LaravelPackageExampleCommand::class)->expectsOutput(config('package-example.command_output'));
-
 });
 
-it('can output another value', function(){
+it('can output another value', function () {
     config()->set('package-example.command_output', 'something else');
 
     artisan(LaravelPackageExampleCommand::class)->expectsOutput('something else');
-
 });
