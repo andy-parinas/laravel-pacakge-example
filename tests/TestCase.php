@@ -5,6 +5,7 @@ namespace AndyParinas\LaravelPackageExample\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use AndyParinas\LaravelPackageExample\LaravelPackageExampleServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class TestCase extends Orchestra
 {
@@ -15,6 +16,8 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'AndyParinas\\LaravelPackageExample\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        Route::example();
     }
 
     protected function getPackageProviders($app)
@@ -28,9 +31,9 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-package-example_table.php.stub';
+        
+        $migration = include __DIR__.'/../database/migrations/create_my_models_table.php.stub';
         $migration->up();
-        */
+       
     }
 }
